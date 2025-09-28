@@ -1,0 +1,50 @@
+#Generador de tablas de verdad
+
+while True:
+    print("\n=== Generador de Tablas de Verdad ===\n")
+    print("Elija una operación lógica:\n")
+    print("1. AND")
+    print("2. OR")
+    print("3. XOR")
+    print("4. NOT")
+    print("5. Salir del programa")
+
+    opcion = input("\nIngresa el número de la operación: ")
+
+    if opcion == "1": #AND
+        print("\nTabla de Verdad:\n")
+        print("A B | A AND B")
+        for A in [0, 1]:
+            for B in [0, 1]:
+                resultado = int(A and B) # Convertir a entero para que muestre 0 o 1
+                print(A, B, "|", resultado)
+
+    elif opcion == "2": #OR
+        print("\nTabla de Verdad:\n")
+        print("A B | A OR B")
+        for A in [0, 1]:
+            for B in [0, 1]:
+                resultado = int(A or B)
+                print(A, B, "|", resultado)
+
+    elif opcion == "3":  # XOR
+        print("\nTabla de Verdad:\n")
+        print("A B | A XOR B")
+        for A in [0, 1]:
+            for B in [0, 1]:
+                resultado = int(A != B)  # XOR verdadero si A y B son distintos
+                print(A, B, "|", resultado)
+                
+    elif opcion == "4":  # NOT
+        print("\nTabla de Verdad:\n")
+        print("A | NOT A")
+        for A in [0, 1]:
+            resultado = int(not A)
+            print(A, "|", resultado)
+            
+    elif opcion == "5":
+        print("\nGracias por usar el programa.")
+        break
+    
+    else:
+        print("\nERROR. Ingresa una opción válida.\n")
